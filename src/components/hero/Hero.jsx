@@ -10,10 +10,7 @@ const heroContent = {
   heroMobileImage: heroImgMobile,
   heroTitleName: "Abdul Musawer Dinzad",
   heroDesignation: "web designer",
-  heroDescriptions: `I'm a Abdul Musawer Dinzad based web designer & front‑end developer focused on
-  crafting clean & user‑friendly experiences, I am passionate about
-  building excellent software that improves the lives of those
-  around me.`,
+  heroDescriptions: `Computer Science graduate skilled in React, Next.js, and Laravel. Passionate about building clean, efficient web solutions that solve real problems. Proficient in full-stack development (NestJS, PostgreSQL) and modern tools like Git and Docker. Let’s create something great!`,
   heroBtn: "more about me",
 };
 
