@@ -5,7 +5,7 @@ const experienceContent = [
     year: "   2024 - Present",
     position: " Full-Stack Web Developer",
     companyName: "Peace Global Logistics",
-    details: `  Develop and test web applications.`,
+    details: `  Completed a comprehensive program in full-stack web development, focusing on both front-end and back-end technologies.`,
   },
 ];
 
