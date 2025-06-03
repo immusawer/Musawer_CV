@@ -4,7 +4,7 @@ const educationContent = [
   {
     year: "2023-2024",
     degree: "Rupani Foundation-WFP",
-    institute: "Full Stack Web Developer Intern",
+    institute: "Full-Stack Web Developer Junior",
     details: `  Develop and test web applications.`,
   },
 ];

@@ -2,9 +2,9 @@ import React from "react";
 
 const experienceContent = [
   {
-    year: "   2024 - Predsent",
-    position: " Junior Web Developer",
-    compnayName: "Peace Global Logistics",
+    year: "   2024 - Present",
+    position: " Full-Stack Web Developer",
+    companyName: "Peace Global Logistics",
     details: `  Develop and test web applications.`,
   },
 ];
@@ -20,7 +20,7 @@ const Experience = () => {
           <span className="time open-sans-font text-uppercase">{val.year}</span>
           <h5 className="poppins-font text-uppercase">
             {val.position}
-            <span className="place open-sans-font">{val.compnayName}</span>
+            <span className="place open-sans-font">{val.companyName}</span>
           </h5>
           <p className="open-sans-font">{val.details}</p>
         </li>
