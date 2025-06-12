@@ -1,0 +1,22 @@
+.cv-preview-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.cv-preview-img {
+  width: 100%;
+  max-width: 420px; /* Approx. A4 width in px */
+  aspect-ratio: 210 / 297;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.cv-preview-img:hover {
+  transform: scale(1.02);
+}

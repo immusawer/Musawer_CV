@@ -1,4 +1,3 @@
-import React from "react";
 import Achievements from "./Achievements";
 import Education from "./Education";
 import Experience from "./Experience";
@@ -6,14 +5,26 @@ import PersonalInfo from "./PersonalInfo";
 import Skills from "./Skills";
 import cv from "../../assets/img/cv.png";
 import heroImgMobile from "../../assets/img/hero/img-mobile.webp";
+import React, { useState } from "react";
+import Modal from "react-modal";
+import cancelImg from "../../assets/img/cancel.svg";
+import "./index.css"; // ✅ Make sure to import your CSS file
 
-const index = () => {
+const heroContent = {
+  heroBtn: "My CV",
+};
+
+const Index = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  function toggleModalOne() {
+    setIsOpen(!isOpen);
+  }
+
   return (
-    <section className="main-content ">
+    <section className="main-content">
       <div className="container">
         <div className="row">
           {/* Personal Info Starts */}
-
           <div className="col-xl-6 col-lg-5 col-12">
             <div className="row">
               <div className="col-12">
@@ -21,7 +32,6 @@ const index = () => {
                   personal info
                 </h3>
               </div>
-              {/* End .col */}
 
               <div className="col-12 d-block d-sm-none">
                 <img
@@ -30,31 +40,25 @@ const index = () => {
                   alt="about avatar"
                 />
               </div>
-              {/* image for mobile menu */}
 
               <div className="col-12">
                 <PersonalInfo />
               </div>
-              {/* End personal info */}
 
               <div className="col-12 mt-1">
-                <a className="button" href={cv} download>
-                  <span className="button-text">Download CV</span>
-                  <span className="button-icon fa fa-download"></span>
-                </a>
+                <button className="button" onClick={toggleModalOne}>
+                  <span className="button-text">{heroContent.heroBtn}</span>
+                  <span className="button-icon fa fa-arrow-right"></span>
+                </button>
               </div>
-              {/* End download button */}
             </div>
           </div>
-          {/*  Personal Info Ends */}
 
-          {/*  Boxes Starts */}
+          {/* Achievements Starts */}
           <div className="col-xl-6 col-lg-7 col-12 mt-5 mt-lg-0">
             <Achievements />
           </div>
-          {/* Achievements Ends */}
         </div>
-        {/* End .row */}
 
         <hr className="separator" />
 
@@ -67,7 +71,6 @@ const index = () => {
           </div>
           <Skills />
         </div>
-        {/* Skills Ends */}
 
         <hr className="separator mt-1" />
 
@@ -89,10 +92,40 @@ const index = () => {
             </div>
           </div>
         </div>
-        {/*  Experience & Education Ends */}
       </div>
+
+      {/* Modal for CV */}
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={toggleModalOne}
+        contentLabel="My dialog"
+        className="custom-modal dark hero"
+        overlayClassName="custom-overlay dark"
+        closeTimeoutMS={500}
+      >
+        <div>
+          <button className="close-modal" onClick={toggleModalOne}>
+            <img src={cancelImg} alt="close icon" />
+          </button>
+
+          <div className="box_inner about">
+            <div data-aos="fade-up" data-aos-duration="1200">
+              <div className="title-section text-left text-sm-center">
+                <h1>
+                  My <span>CV</span>
+                </h1>
+              </div>
+
+              {/* CV Image */}
+              <div className="cv-preview-container">
+                <img src={cv} alt="CV Preview" className="cv-preview-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </Modal>
     </section>
   );
 };
 
-export default index;
+export default Index;
