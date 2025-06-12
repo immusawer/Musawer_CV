@@ -4,11 +4,11 @@ const personalInfoContent = [
   { meta: "Age", metaInfo: "23 Years" },
   { meta: "Nationality", metaInfo: "Afghan" },
   { meta: "Freelance", metaInfo: "Available" },
-  { meta: "Address", metaInfo: "Afghanistan" },
+  { meta: "Address", metaInfo: "Kabul-Afghanistan" },
   { meta: "phone", metaInfo: "+93 744021022" },
   { meta: "Email", metaInfo: "dinzad.musawer@gmail.com" },
   { meta: "github", metaInfo: "immusawer" },
-  { meta: "langages", metaInfo: "Dari, English" },
+  { meta: "langages", metaInfo: "English, Dari, Pashto" },
 ];
 
 const PersonalInfo = () => {
