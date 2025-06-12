@@ -5,7 +5,7 @@ import Experience from "./Experience";
 import PersonalInfo from "./PersonalInfo";
 import Skills from "./Skills";
 import cv from "../../assets/img/cv.png";
-import heroImgMobile from "../../assets/img/hero/img-mobile.jpg";
+import heroImgMobile from "../../assets/img/hero/img-mobile.webp";
 
 const index = () => {
   return (
