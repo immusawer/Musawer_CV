@@ -7,7 +7,7 @@ const personalInfoContent = [
   { meta: "Address", metaInfo: "Kabul-Afghanistan" },
   { meta: "phone", metaInfo: "+93 744021022" },
   { meta: "Email", metaInfo: "dinzad.musawer@gmail.com" },
-  { meta: "github", metaInfo: "immusawer" },
+  { meta: "Linkedin", metaInfo: "Abdul Musawer Dinzad" },
   { meta: "langages", metaInfo: "English, Dari, Pashto" },
 ];
 
