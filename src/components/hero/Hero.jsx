@@ -9,7 +9,7 @@ const heroContent = {
   heroImage: heroImg,
   heroMobileImage: heroImgMobile,
   heroTitleName: "Abdul Musawer Dinzad",
-  heroDesignation: "Web Developer",
+  heroDesignation: "Full-Stack Web Developer",
   heroDescriptions: `Computer Science graduate skilled in React, Next.js, and Laravel. Passionate about building clean, efficient web solutions that solve real problems. Proficient in full-stack development (NestJS, PostgreSQL) and modern tools like Git and Docker. Let’s create something great!`,
   heroBtn: "more about me",
 };
