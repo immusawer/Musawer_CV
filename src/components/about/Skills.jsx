@@ -1,5 +1,3 @@
-import React from "react";
-
 const skillsContent = [
   { skillClass: "p65", skillPercent: "65", skillName: "C#" },
   { skillClass: "p60", skillPercent: "60", skillName: "Laravel" },

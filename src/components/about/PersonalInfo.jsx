@@ -1,7 +1,7 @@
 const personalInfoContent = [
   { meta: "first name", metaInfo: "Abdul Musawer" },
   { meta: "last name", metaInfo: "Dinzad" },
-  { meta: "Age", metaInfo: "23 Years" },
+  { meta: "Age", metaInfo: "25 Years" },
   { meta: "Nationality", metaInfo: "Afghan" },
   { meta: "Freelance", metaInfo: "Available" },
   { meta: "Address", metaInfo: "Kabul-Afghanistan" },

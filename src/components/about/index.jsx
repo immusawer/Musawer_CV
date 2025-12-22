@@ -3,9 +3,10 @@ import Education from "./Education";
 import Experience from "./Experience";
 import PersonalInfo from "./PersonalInfo";
 import Skills from "./Skills";
-import cv from "../../assets/img/cv.png";
+import cv1 from "../../assets/img/cv1.jpg";
+import cv2 from "../../assets/img/cv2.jpg";
 import heroImgMobile from "../../assets/img/hero/img-mobile.webp";
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import cancelImg from "../../assets/img/cancel.svg";
 import "./index.css"; // ✅ Make sure to import your CSS file
@@ -16,9 +17,31 @@ const heroContent = {
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const cvPages = [cv1, cv2];
+
   function toggleModalOne() {
     setIsOpen(!isOpen);
+    setCurrentPage(0);
   }
+
+  // Keyboard navigation (UX upgrade)
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKey = (e) => {
+      if (e.key === "ArrowRight" && currentPage < cvPages.length - 1) {
+        setCurrentPage((p) => p + 1);
+      }
+      if (e.key === "ArrowLeft" && currentPage > 0) {
+        setCurrentPage((p) => p - 1);
+      }
+    };
+
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [isOpen, currentPage, cvPages.length]);
 
   return (
     <section className="main-content">
@@ -98,27 +121,50 @@ const Index = () => {
       <Modal
         isOpen={isOpen}
         onRequestClose={toggleModalOne}
-        contentLabel="My dialog"
+        contentLabel="My CV"
         className="custom-modal dark hero"
         overlayClassName="custom-overlay dark"
         closeTimeoutMS={500}
       >
-        <div>
-          <button className="close-modal" onClick={toggleModalOne}>
-            <img src={cancelImg} alt="close icon" />
-          </button>
+        <button className="close-modal" onClick={toggleModalOne}>
+          <img src={cancelImg} alt="close icon" />
+        </button>
 
-          <div className="box_inner about">
-            <div data-aos="fade-up" data-aos-duration="1200">
-              <div className="title-section text-left text-sm-center">
-                <h1>
-                  My <span>CV</span>
-                </h1>
-              </div>
+        <div className="box_inner about">
+          <div className="title-section text-center">
+            <h1>
+              My <span>CV</span>
+            </h1>
+          </div>
 
-              {/* CV Image */}
-              <div className="cv-preview-container">
-                <img src={cv} alt="CV Preview" className="cv-preview-img" />
+          <div className="cv-preview-wrapper">
+            <div className="cv-preview-container">
+              <img
+                src={cvPages[currentPage]}
+                alt={`CV Page ${currentPage + 1}`}
+                className="cv-preview-img"
+              />
+
+              <div className="cv-navigation">
+                <button
+                  className="cv-nav-btn"
+                  disabled={currentPage === 0}
+                  onClick={() => setCurrentPage((p) => p - 1)}
+                >
+                  ← Prev
+                </button>
+
+                <span className="cv-page-indicator">
+                  Page {currentPage + 1} / {cvPages.length}
+                </span>
+
+                <button
+                  className="cv-nav-btn"
+                  disabled={currentPage === cvPages.length - 1}
+                  onClick={() => setCurrentPage((p) => p + 1)}
+                >
+                  Next →
+                </button>
               </div>
             </div>
           </div>
